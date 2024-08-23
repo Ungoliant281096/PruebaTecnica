@@ -6,31 +6,30 @@ import { createAccessToken } from "../libs/jwt.js";
 
 export const register = async (req, res) => {
   try {
-  
-    const { username, email, password } = req.body;
+    const { username, email, password, rol } = req.body; // Asegúrate de recibir 'rol' desde el body
 
     const userFound = await User.findOne({ email });
 
     if (userFound)
       return res.status(400).json({
-        message: ["El correo ya esta en uso"],
+        message: ["El correo ya está en uso"],
       });
 
-    // hashing the password
+    // Hashing the password
     const passwordHash = await bcrypt.hash(password, 10);
 
-    // creating the user
+    // Creating the user
     const newUser = new User({
       username,
       email,
       password: passwordHash,
-      rol: 'user',
+      rol, // Incluye el rol aquí
     });
 
-    // saving the user in the database
+    // Saving the user in the database
     const userSaved = await newUser.save();
 
-    // create access token
+    // Create access token
     const token = await createAccessToken({
       id: userSaved._id,
       rol: userSaved.rol,
@@ -52,6 +51,7 @@ export const register = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
 
 export const login = async (req, res) => {
   try {
