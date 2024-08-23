@@ -20,8 +20,5 @@ Front:
     El servidor corre en:
         http://localhost:4000/
 
-Registrarse con cualquier usuario para poder visualizar.
-
-Para poder ingresar con un usario admin se tendra que crear un usuario Admin.
-
-Cambiando el Rol en BD con Mongo db
+Registrarse con cualquier usuario para poder visualizar o editar la información
+.
