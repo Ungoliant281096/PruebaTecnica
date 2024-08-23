@@ -4,7 +4,6 @@ import { TOKEN_SECRET } from "../config.js";
 export const auth = (req, res, next) => {
   try {
     const { token } = req.cookies;
-
     if (!token) {
       return res.status(401).json({ message: "No token, permiso denegado" });
     }
@@ -20,3 +19,4 @@ export const auth = (req, res, next) => {
     return res.status(500).json({ message: error.message });
   }
 };
+

@@ -18,9 +18,6 @@ export const registerSchema = z.object({
     .min(6, {
       message: "La contrase;a debe ser de al menos 6 caracteres",
     }),
-  rol: z.string({
-      required_error: "El rol es requerido",
-    }),
 });
 
 export const loginSchema = z.object({

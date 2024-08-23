@@ -6,6 +6,7 @@ import { createAccessToken } from "../libs/jwt.js";
 
 export const register = async (req, res) => {
   try {
+  
     const { username, email, password } = req.body;
 
     const userFound = await User.findOne({ email });
@@ -23,6 +24,7 @@ export const register = async (req, res) => {
       username,
       email,
       password: passwordHash,
+      rol: 'user',
     });
 
     // saving the user in the database
@@ -31,6 +33,7 @@ export const register = async (req, res) => {
     // create access token
     const token = await createAccessToken({
       id: userSaved._id,
+      rol: userSaved.rol,
     });
 
     res.cookie("token", token, {
@@ -43,6 +46,7 @@ export const register = async (req, res) => {
       id: userSaved._id,
       username: userSaved.username,
       email: userSaved.email,
+      rol: userSaved.rol,
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -69,6 +73,7 @@ export const login = async (req, res) => {
     const token = await createAccessToken({
       id: userFound._id,
       username: userFound.username,
+      rol: userFound.rol, // Incluye el rol
     });
 
     res.cookie("token", token, {
