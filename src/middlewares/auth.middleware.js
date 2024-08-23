@@ -20,8 +20,9 @@ export const auth = (req, res, next) => {
   }
 };
 
-
 export const isAdmin = (req, res, next) => {
+  console.log('Usuario:', req.user); // Verificar qué datos se están pasando a req.user
+
   if (!req.user || req.user.rol !== 'admin') {
     return res.status(403).json({ message: "Acceso denegado. Solo los administradores pueden realizar esta acción." });
   }
