@@ -37,7 +37,7 @@ function Register() {
         {registerErrors.map((error, i) => (
           <Message message={error} key={i} />
         ))}
-        <h1 className="text-3xl font-bold text-slate-300">Registrarse</h1>
+        <h1 className="text-3xl font-bold text-green-100 text-center">Registrarse</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
             <Label htmlFor="username">Nombre de usuario:</Label>
