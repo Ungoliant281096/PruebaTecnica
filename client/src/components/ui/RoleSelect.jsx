@@ -21,7 +21,7 @@ const RoleSelect = ({ onSelectRole }) => {
         id="roleSelect" 
         value={role} 
         onChange={handleChange}
-        className="bg-zinc-600 block w-full p-2 border rounded-md shadow-sm"
+        className="bg-green-100 text-black block w-full p-2 border rounded-md shadow-sm"
       >
         <option value="user">User</option>
         <option value="admin">Admin</option>

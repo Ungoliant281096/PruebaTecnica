@@ -21,7 +21,6 @@ export function ProductCard({ product }) {
             day: "numeric",
           })}
       </p>
-      <p>Cantidad en stock: {product.quantity}</p>
       <footer>
       <div className="flex gap-x-2 items-baseline">
           <Button onClick={() => deleteProduct(product._id)}>Eliminar</Button>

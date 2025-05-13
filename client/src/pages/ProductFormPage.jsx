@@ -6,7 +6,6 @@ import { Button, Card, Input, Label } from "../components/ui";
 import { useProducts } from "../context/productsContext";
 import { Textarea } from "../components/ui/Textarea";
 import { useForm, Controller } from "react-hook-form";
-import { CantidadInput } from "../components/ui/CantidadInput";
 
 dayjs.extend(utc);
 
@@ -83,17 +82,6 @@ export function ProductFormPage() {
         <Label htmlFor="date">Fecha de registro</Label>
         <Input type="date" name="date" {...register("date")} />
 
-        <Label htmlFor="quantity">Cantidad</Label>
-        <Controller
-          name="quantity"
-          control={control}
-          render={({ field }) => (
-            <CantidadInput
-              value={field.value || 0}
-              onChange={(value) => field.onChange(value)}
-            />
-          )}
-        />
 
         <Button type="submit">Guardar</Button>
       </form>
