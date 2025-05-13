@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; 
+import { Label } from './Label';
 
 const RoleSelect = ({ onSelectRole }) => {
   const [role, setRole] = useState('user'); // Valor por defecto
@@ -10,12 +11,12 @@ const RoleSelect = ({ onSelectRole }) => {
 
   return (
     <div className="mb-4">
-      <label 
+      <Label 
         htmlFor="roleSelect" 
         className="block text-sm font-medium text-slate-300 mb-2"
       >
-        Selecciona un rol:
-      </label>
+        ¿Eres invitado o Usuario?:
+      </Label>
       
       <select 
         id="roleSelect" 
@@ -23,8 +24,8 @@ const RoleSelect = ({ onSelectRole }) => {
         onChange={handleChange}
         className="bg-green-100 text-black block w-full p-2 border rounded-md shadow-sm"
       >
-        <option value="user">User</option>
-        <option value="admin">Admin</option>
+        <option value="user">Invitado</option>
+        <option value="admin">Usuario</option>
       </select>
     </div>
   );

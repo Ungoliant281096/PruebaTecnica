@@ -58,7 +58,7 @@ export function ProductFormPage() {
   return (
     <Card>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Label htmlFor="title">Nombre del producto</Label>
+        <Label htmlFor="title">Nombre de la tarea</Label>
         <Input
           type="text"
           name="title"

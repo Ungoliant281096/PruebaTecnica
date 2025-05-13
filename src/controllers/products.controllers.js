@@ -31,7 +31,7 @@ export const deleteProduct = async (req, res) => {
   try {
     const deletedProduct = await Product.findByIdAndDelete(req.params.id);
     if (!deletedProduct)
-      return res.status(404).json({ message: "Producto no encontrado" });
+      return res.status(404).json({ message: "Tarea o evento no encontrado" });
 
     return res.sendStatus(204);
   } catch (error) {
@@ -56,7 +56,7 @@ export const updateProduct = async (req, res) => {
 export const getProduct = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
-    if (!product) return res.status(404).json({ message: "Producto no encontrado" });
+    if (!product) return res.status(404).json({ message: "Tarea o evento no encontrado" });
     return res.json(product);
   } catch (error) {
     return res.status(500).json({ message: error.message });

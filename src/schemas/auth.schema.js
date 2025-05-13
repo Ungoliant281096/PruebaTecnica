@@ -16,11 +16,11 @@ export const registerSchema = z.object({
       required_error: "Se requiere una contrase;a",
     })
     .min(6, {
-      message: "La contrase;a debe ser de al menos 6 caracteres",
+      message: "La contrase;a debe ser de al menos 8 caracteres",
     }),
 });
 
 export const loginSchema = z.object({
   email: z.string().email(),
-  password: z.string().min(6),
+  password: z.string().min(8),
 });

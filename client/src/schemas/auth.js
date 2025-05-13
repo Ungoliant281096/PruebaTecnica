@@ -4,8 +4,8 @@ export const loginSchema = z.object({
   email: z.string().email({
     message: "Ingresa un correo valido",
   }),
-  password: z.string().min(6, {
-    message: "La contraseña debe ser mayor de 6 caracteres",
+  password: z.string().min(8, {
+    message: "La contraseña debe ser mayor de 8 caracteres",
   }),
 });
 
@@ -21,11 +21,11 @@ export const registerSchema = z
     email: z.string().email({
       message: "Ingresa un correo valido",
     }),
-    password: z.string().min(6, {
-      message: "La contraseña debe ser mayor de 6 caracteres",
+    password: z.string().min(8, {
+      message: "La contraseña debe ser mayor de 8 caracteres",
     }),
-    confirmPassword: z.string().min(6, {
-      message: "La contraseña debe ser mayor de 6 caracteres",
+    confirmPassword: z.string().min(8, {
+      message: "La contraseña debe ser mayor de 8 caracteres",
     }),
   })
   .refine((data) => data.password === data.confirmPassword, {

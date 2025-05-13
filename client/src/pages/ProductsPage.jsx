@@ -17,7 +17,7 @@ export function ProductsPage() {
           <div>
             <ImFileEmpty className="text-6xl text-gray-400 m-auto my-2" />
             <h1 className="font-bold text-xl">
-              Aun no hay productos, agrega uno nuevo
+              Aun no hay tareas o eventos, agrega uno nuevo
             </h1>
           </div>
         </div>

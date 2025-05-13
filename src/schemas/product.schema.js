@@ -6,7 +6,6 @@ export const createProductSchema = z.object({
   }),
   description: z.string().optional(),
   date: z.string().datetime().optional(),
-  quantity: z.number().int().positive().optional(), 
 });
 
 
